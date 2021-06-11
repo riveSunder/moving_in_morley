@@ -79,7 +79,7 @@ cd carle
 pip install -e .
 
 # run tests if you want
-python -m test.test_all
+python -m tests.test_all
 
 # go back to the root directory and see if CARLE is working
 cd ../
