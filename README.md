@@ -32,7 +32,7 @@ jupyter notebook
 Life-like cellular automata are defined in grid universes divided into cells, where each cell has a state of either 1 or 0, _aka_ on or off, _aka_ alive or dead. The rules defining the dynamics of a CA determine what conditions lead to a transition from 0 to 1 ("birth") or staying in a state of 1 ("survive"), and all other cells transition to a state of 0 at each time step. Part of what makes a CA Life-like (as in, similar to John Conway's Game of Life) is that the next state of a given cell is fully determined by its current state and the sum of the states of its immediate neighbers, _i.e._ the contents of its Moore neighborhood.
 
 <div align="center">
-<img src="assets/moore_neighborhood">
+<img src="assets/moore_neighborhood.png">
 <br>
 <em>A Moore neighborhood</em>
 </div>
@@ -86,9 +86,7 @@ Anyway, if you want to have a look at the patterns discovered in my direct-optim
 
 ## Appendum
 
-<em>
-Note that this is not a real entry to the [Carle's Game](https://github.com/rivesunder/carles_games) competition, as the progenitor of the contest and myself are one and the same. It is, however, an example of how one might go about addressing the challenge and writing up an experiment in order to enter the contest. My intention with this example is that it will pique your interest and encourage the reader to participate in the contest as an entrant or judge, and serve as a reminder that you don't have to solve open-endedness or AI in order to make a meaningful contribution to the challenge. In fact, you're more than welcome, nay, encouraged to take advantage of any of the tools provided in this repo or its parent in order to explore the world of machine interaction (or machine-aided interaction) with Life-like cellular automata in CARLE. 
-</em>
+Note that this is not a real entry to the [Carle's Game](https://github.com/rivesunder/carles_game) competition, as the progenitor of the contest and myself are one and the same. It is, however, an example of how one might go about addressing the challenge and writing up an experiment in order to enter the contest. My intention with this example is that it will pique your interest and encourage the reader to participate in the contest as an entrant or judge, and serve as a reminder that you don't have to solve open-endedness or AI in order to make a meaningful contribution to the challenge. In fact, you're more than welcome, nay, encouraged to take advantage of any of the tools provided in this repo or its parent in order to explore the world of machine interaction (or machine-aided interaction) with Life-like cellular automata in CARLE. 
 
 <em>
 Good luck, thanks for reading, and I wish you well in your explorations. 
