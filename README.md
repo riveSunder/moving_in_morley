@@ -3,7 +3,7 @@
 
 Greetings apertonauts! This repository describes an evolutionary search for mobile patterns in the Move/Morley Life-like cellular automata rules (B368/S245). I used a covariance matrix adaptation evolution strategy (CMA-ES [Hansen 2016](https://hal.inria.fr/hal-01297037/file/tutorial.pdf)) to find a minimal glider known as "the jellyfish" and also the Morley common puffer. If you want to skip directly to the demonstration of the patterns, use the link below to spin up an interactive bokeh app on [mybinder.org](https://mybinder.org), or clone this repository and open up the notebook at `notebooks/evaluation.ipynb`. For more information on the strategy I used and a discussion of the results, read on. 
 
-[`https://mybinder.org/v2/gh/riveSunder/movement_in_morley/master?urlpath=/proxy/5006/bokeh-app`](https://mybinder.org/v2/gh/riveSunder/movement_in_morley/master?urlpath=/proxy/5006/bokeh-app)
+[`https://mybinder.org/v2/gh/riveSunder/moving_in_morley/master?urlpath=/proxy/5006/bokeh-app`](https://mybinder.org/v2/gh/riveSunder/moving_in_morley/master?urlpath=/proxy/5006/bokeh-app)
 
 ```
 # clone this repository and install dependencies, in order to evaluate the found patterns in a Jupyter notebook
@@ -82,7 +82,8 @@ Although a Morley CA universe has a lower chance of producing mobile patterns fr
 
 Anyway, if you want to have a look at the patterns discovered in my direct-optimization CMA-ES experiments, check out the interactive demonstration on mybinder:
 
-[`https://mybinder.org/v2/gh/riveSunder/movement_in_morley/master?urlpath=/proxy/5006/bokeh-app`](https://mybinder.org/v2/gh/riveSunder/movement_in_morley/master?urlpath=/proxy/5006/bokeh-app)
+
+[`https://mybinder.org/v2/gh/riveSunder/moving_in_morley/master?urlpath=/proxy/5006/bokeh-app`](https://mybinder.org/v2/gh/riveSunder/moving_in_morley/master?urlpath=/proxy/5006/bokeh-app)
 
 ## Appendum
 
