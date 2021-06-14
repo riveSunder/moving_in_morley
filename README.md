@@ -1,9 +1,9 @@
 # Movement in the Morley Rules: 
-## A (Demonstration) Entry to the [Carle's Game](https://rivesunder.threadless.com/designs/puffer-progression) challenge.
+## A (Demonstration) Entry to the [Carle's Game](https://github.com/rivesunder/carles_game) challenge.
 
 Greetings apertonauts! This repository describes an evolutionary search for mobile patterns in the Move/Morley Life-like cellular automata rules (B368/S245). I used a covariance matrix adaptation evolution strategy (CMA-ES [Hansen 2016](https://hal.inria.fr/hal-01297037/file/tutorial.pdf)) to find a minimal glider known as "the jellyfish" and also the Morley common puffer. If you want to skip directly to the demonstration of the patterns, use the link below to spin up an interactive bokeh app on [mybinder.org](https://mybinder.org), or clone this repository and open up the notebook at `notebooks/evaluation.ipynb`. For more information on the strategy I used and a discussion of the results, read on. 
 
-[`https://mybinder.org/v2/gh/riveSunder/movement_in_morley/master?urlpath=/proxy/5006/bokeh-app`](https://mybinder.org/v2/gh/riveSunder/movement_in_morley/master?urlpath=/proxy/5006/bokeh-app)
+[`https://mybinder.org/v2/gh/riveSunder/moving_in_morley/master?urlpath=/proxy/5006/bokeh-app`](https://mybinder.org/v2/gh/riveSunder/moving_in_morley/master?urlpath=/proxy/5006/bokeh-app)
 
 ```
 # clone this repository and install dependencies, in order to evaluate the found patterns in a Jupyter notebook
@@ -32,7 +32,7 @@ jupyter notebook
 Life-like cellular automata are defined in grid universes divided into cells, where each cell has a state of either 1 or 0, _aka_ on or off, _aka_ alive or dead. The rules defining the dynamics of a CA determine what conditions lead to a transition from 0 to 1 ("birth") or staying in a state of 1 ("survive"), and all other cells transition to a state of 0 at each time step. Part of what makes a CA Life-like (as in, similar to John Conway's Game of Life) is that the next state of a given cell is fully determined by its current state and the sum of the states of its immediate neighbers, _i.e._ the contents of its Moore neighborhood.
 
 <div align="center">
-<img src="assets/moore_neighborhood">
+<img src="assets/moore_neighborhood.png">
 <br>
 <em>A Moore neighborhood</em>
 </div>
@@ -82,7 +82,8 @@ Although a Morley CA universe has a lower chance of producing mobile patterns fr
 
 If you want to have a look at the patterns discovered in my direct-optimization CMA-ES experiments, check out the interactive demonstration on mybinder:
 
-[`https://mybinder.org/v2/gh/riveSunder/movement_in_morley/master?urlpath=/proxy/5006/bokeh-app`](https://mybinder.org/v2/gh/riveSunder/movement_in_morley/master?urlpath=/proxy/5006/bokeh-app)
+
+[`https://mybinder.org/v2/gh/riveSunder/moving_in_morley/master?urlpath=/proxy/5006/bokeh-app`](https://mybinder.org/v2/gh/riveSunder/moving_in_morley/master?urlpath=/proxy/5006/bokeh-app)
 
 Likewise, if you want to run a similar search experiment, try entering some variation of the command below at the command line, after installing `carles_game` and `carle` and from with the `carles_game` root folder:
 

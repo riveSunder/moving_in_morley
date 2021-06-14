@@ -32,7 +32,7 @@ for filename in directory_list:
         policy_list.append(os.path.join("policies", filename))
         
 # instantiate CARLE with a speed detection wrapper
-env = CARLE(height=256, width=256)
+env = CARLE(height=128, width=128)
 env = SpeedDetector(env)
 
 # set Move/Morley rules
@@ -42,9 +42,7 @@ agent.set_params(np.load(policy_list[0]))
 
 print(f"{len(policy_list)} Toggle glider policies found.")
 
-env = CARLE(height=256, width=256)
 env.rules_from_string(my_rules)
-env = SpeedDetector(env)
 
 global obs
 obs = env.reset()
