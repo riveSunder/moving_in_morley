@@ -80,17 +80,39 @@ Although a Morley CA universe has a lower chance of producing mobile patterns fr
 <img src="assets/morley_puffer.gif">
 </div>
 
-Anyway, if you want to have a look at the patterns discovered in my direct-optimization CMA-ES experiments, check out the interactive demonstration on mybinder:
+If you want to have a look at the patterns discovered in my direct-optimization CMA-ES experiments, check out the interactive demonstration on mybinder:
 
 [`https://mybinder.org/v2/gh/riveSunder/movement_in_morley/master?urlpath=/proxy/5006/bokeh-app`](https://mybinder.org/v2/gh/riveSunder/movement_in_morley/master?urlpath=/proxy/5006/bokeh-app)
+
+Likewise, if you want to run a similar search experiment, try entering some variation of the command below at the command line, after installing `carles_game` and `carle` and from with the `carles_game` root folder:
+
+```
+python -m game_of_carle.experiment -mg  32  -ms  1024  -dim  128  -p  16  -v  1  -e  2  -d  cuda:0  -s  13  1337  42   -a  Toggle -w  RND2D  SpeedDetector  -tr  B368/S245  -vr  B368/S245  -tag  glider_search
+```
+
+`python -m game_of_carle.experiment` is the name of the experiment module, you can peruse and modify the code [here](game_of_carle/experiment.py). Other arguments are:
+
+* `-mg` or `--max_generations` is the number of generations to train, analagous to an "epoch" in supervised learning.
+* `-ms` or `--max_steps` is the number of steps per agent interaction with the environment. You can think of this as the episode length from episodic RL, but CARLE never returns a done signal. 
+* `-dim` or `--env_dimension` is the height and width used by the CARLE grid universe. Using a smaller `env_dimension` can make for faster run times, minimum 64. `
+* `-p` or `--population_size`, the number of individual agents in the population at each generation.
+* `-v` or `--vectorizaiton`, the degree of vectorization to be used in CARLE. This adjust the `N` channel of the `Nx1xHxW` CARLE grid universe and is used to sample `N` grid interactions simultaneously. 
+* `-e` or `--episodes`. Each agent will interact with CARLE this many times per generation (for `max_steps` steps)
+* `-d` or `--device` is the hardware device to run on, can be `"cpu"` or `f"cuda:{index}"` for cuda-enabled set ups, where index is the gpu index to use. (No `DataParallel` multi-gpu training at the moment)
+* `-s` or `--seeds`. Random seeds used before each experimental run. 3 seeds means the experiment will have 3 seed replicates.
+* `-a` or `--agents` are the agent architectures to use in experiments, options are `Toggle`, `HARLI`, or `CARLA` and one or more can be specified.
+* `-w` or `--wrappers`. Reward wrappers to be used during training. One or more can be applied, and they are all applied alike for every experimental run in a given experiment. Options are `SpeedDetector`, which gives a reward for changing center of mass of all live cells; `PufferDetector`, rewards growth of the total number of live cells; `RND2D`, which yields a random network distillation exploration bonus (Burda _et al._ 2018](https://arxiv.org/abs/1810.12894v1)); or `AE2D`, which gives an exploration bonus based on autoencoder loss. Note that `AE2D` is a translation invariant reward and `RND2D` is not, due to the use of fully connected layers in the random and prediction networks.
+* `-tr` or `--training_rules` are the rules, specified in CA rulestring format, to be used during training. If more than one set of rules are supplied (_e.g._ `-tr B3/S23 B3/S023`), each experimental run will sample from the available options each time the environment is fully reset.
+* `-vr` or `--validation_rules` are the validation rules. More than one can be specified and every validation rule set will be examined during validation (currently every 16th generation). 
+* `-tag` is a string tag to make it easier to search for your experiment on tensorboard. 
 
 ## Appendum
 
 <em>
-Note that this is not a real entry to the [Carle's Game](https://github.com/rivesunder/carles_games) competition, as the progenitor of the contest and myself are one and the same. It is, however, an example of how one might go about addressing the challenge and writing up an experiment in order to enter the contest. My intention with this example is that it will pique your interest and encourage the reader to participate in the contest as an entrant or judge, and serve as a reminder that you don't have to solve open-endedness or AI in order to make a meaningful contribution to the challenge. In fact, you're more than welcome, nay, encouraged to take advantage of any of the tools provided in this repo or its parent in order to explore the world of machine interaction (or machine-aided interaction) with Life-like cellular automata in CARLE. 
+Note that this is not a real entry to the [Carle's Game](https://github.com/rivesunder/carles_games) competition, as the progenitor of the contest and myself are one and the same. It is, however, an example of how one might go about addressing the challenge and writing up an experiment in order to enter the contest. My intention with this example is that it will pique your interest and encourage the reader to participate in the contest as an entrant or judge, and serve as a reminder that you don't have to solve open-endedness or AI in order to make a good entry to the challenge. A relatively simple and inconclusive exploration like the one described here is a welcome contribution. In fact, you're welcome and encouraged to take advantage of any of the tools provided in this repo or its parent in order to explore the world of machine interaction (or machine-aided interaction) with Life-like cellular automata in CARLE. 
 </em>
 
 <em>
-Good luck, thanks for reading, and I wish you well in your explorations. 
+Good luck, thanks for reading, and I look forward to seeing what your creations create.  
 </em>
 
