@@ -85,7 +85,7 @@ If you want to have a look at the patterns discovered in my direct-optimization 
 
 [`https://mybinder.org/v2/gh/riveSunder/moving_in_morley/master?urlpath=/proxy/5006/bokeh-app`](https://mybinder.org/v2/gh/riveSunder/moving_in_morley/master?urlpath=/proxy/5006/bokeh-app)
 
-Likewise, if you want to run a similar search experiment, try entering some variation of the command below at the command line, after installing `carles_game` and `carle` and from with the `carles_game` root folder:
+Likewise, if you want to run a similar search experiment, try entering some variation of the command below at the command line, after installing `carles_game` and `carle` and from the `carles_game` root folder:
 
 ```
 python -m game_of_carle.experiment -mg  32  -ms  1024  -dim  128  -p  16  -v  1  -e  2  -d  cuda:0  -s  13  1337  42   -a  Toggle -w  RND2D  SpeedDetector  -tr  B368/S245  -vr  B368/S245  -tag  glider_search
@@ -99,7 +99,7 @@ python -m game_of_carle.experiment -mg  32  -ms  1024  -dim  128  -p  16  -v  1 
 * `-p` or `--population_size`, the number of individual agents in the population at each generation.
 * `-v` or `--vectorizaiton`, the degree of vectorization to be used in CARLE. This adjust the `N` channel of the `Nx1xHxW` CARLE grid universe and is used to sample `N` grid interactions simultaneously. 
 * `-e` or `--episodes`. Each agent will interact with CARLE this many times per generation (for `max_steps` steps)
-* `-d` or `--device` is the hardware device to run on, can be `"cpu"` or `f"cuda:{index}"` for cuda-enabled set ups, where index is the gpu index to use. (No `DataParallel` multi-gpu training at the moment)
+* `-d` or `--device` is the hardware device to run on, can be `cpu` or `cuda:i` for cuda-enabled set ups, where `i` is the gpu index to use. (No `DataParallel` multi-gpu training at the moment)
 * `-s` or `--seeds`. Random seeds used before each experimental run. 3 seeds means the experiment will have 3 seed replicates.
 * `-a` or `--agents` are the agent architectures to use in experiments, options are `Toggle`, `HARLI`, or `CARLA` and one or more can be specified.
 * `-w` or `--wrappers`. Reward wrappers to be used during training. One or more can be applied, and they are all applied alike for every experimental run in a given experiment. Options are `SpeedDetector`, which gives a reward for changing center of mass of all live cells; `PufferDetector`, rewards growth of the total number of live cells; `RND2D`, which yields a random network distillation exploration bonus (Burda _et al._ 2018](https://arxiv.org/abs/1810.12894v1)); or `AE2D`, which gives an exploration bonus based on autoencoder loss. Note that `AE2D` is a translation invariant reward and `RND2D` is not, due to the use of fully connected layers in the random and prediction networks.
