@@ -115,9 +115,7 @@ python -m game_of_carle.experiment -mg  32  -ms  1024  -dim  128  -p  16  -v  1 
 
 ## Appendum
 
-<em>
 Note that this is not a real entry to the [Carle's Game](https://github.com/rivesunder/carles_game) competition, as the progenitor of the contest and myself are one and the same. It is, however, an example of how one might go about addressing the challenge and writing up an experiment in order to enter the contest. My intention with this example is that it will pique your interest and encourage the reader to participate in the contest as an entrant or judge, and serve as a reminder that you don't have to solve open-endedness or AI in order to make a good entry to the challenge. A relatively simple and inconclusive exploration like the one described here is a welcome contribution. In fact, you're welcome and encouraged to take advantage of any of the tools provided in this repo or its parent in order to explore the world of machine interaction (or machine-aided interaction) with Life-like cellular automata in CARLE. 
-</em>
 
 <em>
 Good luck, thanks for reading, and I look forward to seeing what your creations create.  
