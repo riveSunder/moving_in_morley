@@ -1,6 +1,12 @@
 # Movement in the Morley Rules: 
 ## A (Demonstration) Entry to the [Carle's Game](https://github.com/rivesunder/carles_game) challenge.
 
+<div align="center">
+<img src="assets/morley_puffer_r.gif">
+<br>
+<em>A pattern producing a puffer in Morley (B368/S245) discovered with CMA-ES search</em>
+</div>
+
 Greetings apertonauts! This repository describes an evolutionary search for mobile patterns in the Move/Morley Life-like cellular automata rules (B368/S245). I used a covariance matrix adaptation evolution strategy (CMA-ES [Hansen 2016](https://hal.inria.fr/hal-01297037/file/tutorial.pdf)) to find a minimal glider known as "the jellyfish" and also the Morley common puffer. If you want to skip directly to the demonstration of the patterns, use the link below to spin up an interactive bokeh app on [mybinder.org](https://mybinder.org), or clone this repository and open up the notebook at `notebooks/evaluation.ipynb`. For more information on the strategy I used and a discussion of the results, read on. 
 
 [`https://mybinder.org/v2/gh/riveSunder/moving_in_morley/master?urlpath=/proxy/5006/bokeh-app`](https://mybinder.org/v2/gh/riveSunder/moving_in_morley/master?urlpath=/proxy/5006/bokeh-app)
